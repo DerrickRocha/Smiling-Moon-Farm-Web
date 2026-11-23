@@ -1,0 +1,8 @@
+@model List<SmilingMoonFarmWeb.Entities.Product>
+
+<div class="products-container">
+    @foreach (var product in Model)
+    {
+        @product.Name <br/>
+    }
+</div>
