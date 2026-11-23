@@ -1,0 +1,31 @@
+@model SmilingMoonFarmWeb.Entities.Product
+<div class="product-card">
+    <div class="card-image-wrapper">
+        @{
+            var imageUrl = Model.Images.Count > 0
+                ? Model.Images[0].Url
+                : "prod_no_image_padded.png";
+            var price = Model.Price;
+            /*if (price == 0)
+            {
+                var options = Model.options;
+                if (options.Length == 0)
+                {
+                    price = 0;
+                }
+                else
+                {
+                    var option = options[0];
+                    if (option.Choices.Length > 0)
+                    {
+                        price = option.Choices[0].Price;
+                    }
+                }
+            }*/
+        }
+        <img class="card-image" src="@imageUrl" alt="@imageUrl"/>
+    </div>
+
+    <div class="card-name">@Model.Name</div>
+    <div class="card-price">From $@(price / 100)</div>
+</div>

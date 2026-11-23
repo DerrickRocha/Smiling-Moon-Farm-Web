@@ -3,6 +3,6 @@
 <div class="products-container">
     @foreach (var product in Model)
     {
-        @product.Name <br/>
+        @await Component.InvokeAsync("ProductCard", new { product })
     }
 </div>
